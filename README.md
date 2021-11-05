@@ -1,2 +1,2 @@
 # genius-app
-coding the genius with javascript
+coding the game genius with javascript
