@@ -1,6 +1,8 @@
 let order = [];
 let clickedOrder = [];
 let score = 0;
+let highScore = localStorage.getItem("highscore");
+document.querySelector(".high-score").innerHTML = `high score: ${highScore}`;
 
 // 0 = cyan
 // 1 = yellow
@@ -82,17 +84,29 @@ let nextLevel = () => {
 // Game Over function
 let gameOver = () => {
   document.querySelector(".current-score").innerHTML = `score: 0`;
-  alert(`Score: ${score}\n GAME OVER`);
+  verifyHighScore();
+  alert(`GAME OVER`);
   order = [];
   clickedOrder = [];
 
   playGame();
 };
 
+// compare score and high score
+let verifyHighScore = () => {
+  highScore = localStorage.getItem("highscore");
+  console.log(score);
+  console.log(highScore);
+  if (score > highScore) {
+    console.log("chegou");
+    localStorage.setItem("highscore", score);
+    document.querySelector(".high-score").innerHTML = `high score: ${score}`;
+  }
+};
+
 // Start game
 let playGame = () => {
   score = 0;
-
   nextLevel();
 };
 
