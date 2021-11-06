@@ -1,7 +1,11 @@
 let order = [];
 let clickedOrder = [];
 let score = 0;
-let highScore = localStorage.getItem("highscore");
+let highScore;
+
+highScore == null
+  ? (highScore = 0)
+  : (highScore = localStorage.getItem("highscore"));
 
 // 0 = cyan
 // 1 = yellow
@@ -96,7 +100,7 @@ let verifyHighScore = () => {
   highScore = localStorage.getItem("highscore");
   console.log(score);
   console.log(highScore);
-  if (score > highScore && highScore != null) {
+  if (score > highScore) {
     console.log("chegou");
     localStorage.setItem("highscore", score);
     document.querySelector(".high-score").innerHTML = `high score: ${score}`;
