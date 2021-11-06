@@ -1,7 +1,7 @@
 let order = [];
 let clickedOrder = [];
 let score = 0;
-let highScore = (highScore = localStorage.getItem("highscore"));
+let highScore = localStorage.getItem("highscore");
 
 // 0 = cyan
 // 1 = yellow
