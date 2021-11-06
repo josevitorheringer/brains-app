@@ -103,8 +103,8 @@ let verifyHighScore = () => {
   if (score > highScore) {
     console.log("chegou");
     localStorage.setItem("highscore", score);
-    document.querySelector(".high-score").innerHTML = `high score: ${score}`;
   }
+  document.querySelector(".high-score").innerHTML = `high score: ${highScore}`;
 };
 
 // Start game
