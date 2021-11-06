@@ -97,7 +97,7 @@ let verifyHighScore = () => {
   highScore = localStorage.getItem("highscore");
   console.log(score);
   console.log(highScore);
-  if (score > highScore) {
+  if (score > highScore && highScore != null) {
     console.log("chegou");
     localStorage.setItem("highscore", score);
     document.querySelector(".high-score").innerHTML = `high score: ${score}`;
