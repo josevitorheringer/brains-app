@@ -2,7 +2,7 @@ let order = [];
 let clickedOrder = [];
 let score = 0;
 let highScore = localStorage.getItem("highscore");
-document.querySelector(".high-score").innerHTML = `high score: ${highScore}`;
+verifyHighScore();
 
 // 0 = cyan
 // 1 = yellow
