@@ -2,7 +2,6 @@ let order = [];
 let clickedOrder = [];
 let score = 0;
 let highScore = localStorage.getItem("highscore");
-verifyHighScore();
 
 // 0 = cyan
 // 1 = yellow
@@ -115,4 +114,5 @@ yellow.onclick = () => click(1);
 red.onclick = () => click(2);
 green.onclick = () => click(3);
 
+verifyHighScore();
 playGame();
