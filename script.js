@@ -44,7 +44,8 @@ let checkOrder = () => {
     }
   }
   if (clickedOrder.length == order.length) {
-    alert(`Score: ${score}\n`);
+    score++;
+    document.querySelector(".current-score").innerHTML = `score: ${score}`;
     nextLevel();
   }
 };
@@ -57,7 +58,7 @@ let click = (color) => {
   setTimeout(() => {
     createColorElement(color).classList.remove("selected");
     checkOrder();
-  }, 250);
+  }, 120);
 };
 
 // return color
@@ -75,12 +76,12 @@ let createColorElement = (color) => {
 
 // Next level function
 let nextLevel = () => {
-  score++;
   shuffleOrder();
 };
 
 // Game Over function
 let gameOver = () => {
+  document.querySelector(".current-score").innerHTML = `score: 0`;
   alert(`Score: ${score}\n GAME OVER`);
   order = [];
   clickedOrder = [];
@@ -91,7 +92,6 @@ let gameOver = () => {
 // Start game
 let playGame = () => {
   score = 0;
-  alert(`prepare`);
 
   nextLevel();
 };

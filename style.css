@@ -1,19 +1,30 @@
 body {
   background-color: #282a36;
   font-family: "Dongle", sans-serif;
-  color: #f8f8f2;
+  color: #ff79c6;
 }
 
-.game-title {
+.title-game {
   width: 100%;
-  font-size: 60px;
   text-align: center;
 }
 
+.title {
+  font-size: 60px;
+  margin-bottom: 0px;
+}
+
+.description {
+  color: #f8f8f2;
+  font-size: 50px;
+  margin-top: 0px;
+}
+
 .main-game {
-  height: 50vh;
+  height: 500px;
   width: 98vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -57,5 +68,12 @@ body {
 }
 
 .selected {
-  opacity: 0.3;
+  background-color: #44475a;
+}
+
+.score {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  font-size: 40px;
 }
