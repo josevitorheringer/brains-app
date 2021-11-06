@@ -93,9 +93,6 @@ let gameOver = () => {
 
 // compare score and high score
 let verifyHighScore = () => {
-  highScore = localStorage.getItem("highscore");
-  console.log(score);
-  console.log(highScore);
   if (score > highScore) {
     console.log("chegou");
     localStorage.setItem("highscore", score);
