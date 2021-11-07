@@ -27,9 +27,10 @@ let shuffleOrder = () => {
     let elementColor = createColorElement(order[i]);
     lightColor(elementColor, Number(i) + 1);
   }
+  let time = order.length * 500;
   setTimeout(() => {
     hiddenModal(unclickModal);
-  }, order.length * 500);
+  }, time + 150);
 };
 
 // Shine next color
