@@ -13,6 +13,7 @@ const cyan = document.querySelector(".cyan");
 const yellow = document.querySelector(".yellow");
 const red = document.querySelector(".red");
 const green = document.querySelector(".green");
+const starGame = document.querySelector(".new-game-button");
 
 let shuffleOrder = () => {
   let colorOrder = Math.floor(Math.random() * 4);
@@ -113,4 +114,12 @@ red.onclick = () => click(2);
 green.onclick = () => click(3);
 
 highScore == null ? (highScore = 0) : verifyHighScore();
-playGame();
+starGame.onclick = () => {
+  hiddenModal(document.querySelector("#new-game"));
+  playGame();
+};
+
+let hiddenModal = (modal) => {
+  modal.classList.remove("visible-modal");
+  modal.classList.add("hidden-modal");
+};
