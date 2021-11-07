@@ -83,3 +83,11 @@ body {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 40px;
+  }
+  .description {
+    font-size: 30px;
+  }
+}
