@@ -40,7 +40,7 @@ let checkOrder = () => {
   for (let i in clickedOrder) {
     if (clickedOrder[i] != order[i]) {
       gameOver();
-      break;
+      return;
     }
   }
   if (clickedOrder.length == order.length) {
