@@ -29,7 +29,6 @@ let shuffleOrder = () => {
   }
   setTimeout(() => {
     hiddenModal(unclickModal);
-    console.log("chegou");
   }, order.length * 500);
 };
 
