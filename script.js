@@ -14,6 +14,9 @@ const yellow = document.querySelector(".yellow");
 const red = document.querySelector(".red");
 const green = document.querySelector(".green");
 const starGame = document.querySelector(".new-game-button");
+const gameOverButton = document.querySelector(".game-over-button");
+const newGameModal = document.querySelector("#new-game");
+const gameOverModal = document.querySelector("#game-over");
 
 let shuffleOrder = () => {
   let colorOrder = Math.floor(Math.random() * 4);
@@ -86,11 +89,10 @@ let nextLevel = () => {
 let gameOver = () => {
   document.querySelector(".current-score").innerHTML = `score: 0`;
   verifyHighScore();
-  alert(`GAME OVER`);
   order = [];
   clickedOrder = [];
-
-  playGame();
+  hiddenModal(newGameModal);
+  showModal(gameOverModal);
 };
 
 // compare score and high score
@@ -100,6 +102,16 @@ let verifyHighScore = () => {
     highScore = localStorage.getItem("highscore");
   }
   document.querySelector(".high-score").innerHTML = `high score: ${highScore}`;
+};
+
+let hiddenModal = (modal) => {
+  modal.classList.remove("visible-modal");
+  modal.classList.add("hidden-modal");
+};
+
+let showModal = (modal) => {
+  modal.classList.remove("hidden-modal");
+  modal.classList.add("visible-modal");
 };
 
 // Start game
@@ -114,12 +126,13 @@ red.onclick = () => click(2);
 green.onclick = () => click(3);
 
 highScore == null ? (highScore = 0) : verifyHighScore();
+
 starGame.onclick = () => {
-  hiddenModal(document.querySelector("#new-game"));
+  hiddenModal(newGameModal);
   playGame();
 };
 
-let hiddenModal = (modal) => {
-  modal.classList.remove("visible-modal");
-  modal.classList.add("hidden-modal");
+gameOverButton.onclick = () => {
+  hiddenModal(gameOverModal);
+  playGame();
 };
