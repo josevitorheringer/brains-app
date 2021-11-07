@@ -17,6 +17,7 @@ const starGame = document.querySelector(".new-game-button");
 const gameOverButton = document.querySelector(".game-over-button");
 const newGameModal = document.querySelector("#new-game");
 const gameOverModal = document.querySelector("#game-over");
+const unclickModal = document.querySelector("#unable-click");
 
 let shuffleOrder = () => {
   let colorOrder = Math.floor(Math.random() * 4);
@@ -26,6 +27,10 @@ let shuffleOrder = () => {
     let elementColor = createColorElement(order[i]);
     lightColor(elementColor, Number(i) + 1);
   }
+  setTimeout(() => {
+    hiddenModal(unclickModal);
+    console.log("chegou");
+  }, order.length * 500);
 };
 
 // Shine next color
@@ -80,6 +85,7 @@ let createColorElement = (color) => {
 
 // Next level function
 let nextLevel = () => {
+  showModal(unclickModal);
   setTimeout(() => {
     shuffleOrder();
   }, 500);
